@@ -1,66 +1,65 @@
 <!doctype html>
 <html lang="en">
-<head>
-</head>
-<body>
-<?php
-$First_name = $Last_name = $Address = $City = $State = $Zip = $Gender="";
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    $First_name = test_input($_POST["First_name"]);
-    $Last_name = test_input($_POST["Last_name"]);
-    $Address = test_input($_POST["Address"]);
-    $City = test_input($_POST["City"]);
-    $State = test_input($_POST["State"]);
-    $Zip = test_input($_POST["Zip"]);
-    $Gender = test_input($_POST["Gender"]);
-}
-function test_input($data){
-    $data = trim ($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-?>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  First_name
-  <br>
-  <input type="text" name="First_name">
-  <br><br>
-  Last_name: <input type="text" name="Last_name">
-  <br><br>
-  Address: <input type="text" name="Address">
-  <br><br>
-  City: <input type="text" name="City">
-  <br><br>
-  State: <input type="text" name="State" >
-  <br><br>
-  Zip: <input type="text" name="Zip">
-  <br><br>
-  <input type="radio" name="gender" value="female">Female
-  <input type="radio" name="gender" value="male">Male
-    <br><br>
-  <input type="register" name="register" value="Register">  
-</form>
- 
-<?php
-/*
-echo $First_name;
-echo "<br>";
-echo $Last_name;
-echo "<br>";
-echo $address;
-echo "<br>"
-//echo $City;
-//echo "<br>";
-//echo $State;
-//echo "<br>";
-//echo $gender;
-//echo "<br>";
-//echo $Zip;
-*/
-?>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-   
-</body>
+    <title>Form Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>California</option>
+              <option >Virginia</option>
+              <option >Michigan</option>
+              <option >Florida</option>
+              <option >Alaska</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+  </body>
 </html>
