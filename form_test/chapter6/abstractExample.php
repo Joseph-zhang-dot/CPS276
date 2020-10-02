@@ -13,6 +13,6 @@ class Audi extends car{
     }
 }
 $audi = new audi("Audi");
-echo $audo->intro;
+echo $audi->intro;
 echo "<br>";
 ?>
