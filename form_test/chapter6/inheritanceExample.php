@@ -20,7 +20,7 @@ class Strawberry extends Fruit{
         $this->weight =$weight;
     }
     public function message(){
-        echo " Am I a fruit or a berry?{$this->name}, {$this->color}, {$this->weight}";
+        echo " The fruit is {$this->name}, the color is {$this->color}, and the weight is {$this->weight}.";
     }
 }
     $strawberry = new Strawberry("Straw","red", 50);
