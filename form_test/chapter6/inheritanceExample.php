@@ -13,11 +13,17 @@ class Fruit{
     }
 }
 class Strawberry extends Fruit{
+    public $weight;
+    public function _construct($name, $color, $weight){
+        $this->name = $name;
+        $this->color = $color;
+        $this->weight =$weight;
+    }
     public function message(){
-        echo " Am I a fruit or a berry?";
+        echo " Am I a fruit or a berry?{$this->name}, {$this->color}, {$this->weight}";
     }
 }
-    $strawberry = new Strawberry("Straw","red");
+    $strawberry = new Strawberry("Straw","red", 50);
     $strawberry->message();
     echo "<br>";
     $strawberry->intro();
