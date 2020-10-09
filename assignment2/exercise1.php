@@ -1,4 +1,7 @@
 <?php
+/*
+An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
+*/
     for ($row = 1; $row < 5; $row++) {
      echo "<ul>";
      echo "<li>".$row."</li>";//echo what?
@@ -27,8 +30,6 @@
   <body>
     <h1 style="color:blue;font-size:20px;">This is program for Nested Loop</h1>
     <br>
-   <?php echo $col; ?>
     
-   
   </body>
 </html>
