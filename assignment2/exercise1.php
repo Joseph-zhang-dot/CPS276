@@ -17,7 +17,7 @@
            
       for ($row = 1; $row < 5; $row++) {
         echo "<ul>";
-        echo "<li>".$row."</li>";
+        echo "<li>".$row."</li>";//echo what?
         
         echo "</ul>";
         
