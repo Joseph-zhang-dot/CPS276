@@ -1,3 +1,17 @@
+<?php
+    for ($row = 1; $row < 5; $row++) {
+     echo "<ul>";
+     echo "<li>".$row."</li>";//echo what?
+     echo "</ul>";
+     echo "<ul>";
+     echo "<ul>";
+     for ($col = 1; $col < 6; $col++) {
+       echo "<li>".$col."</li>";
+     }
+     echo "</ul>";
+     echo "</ul>";
+    }
+?> 
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,26 +27,7 @@
   <body>
     <h1 style="color:blue;font-size:20px;">This is program for Nested Loop</h1>
     <br>
-    <?php
-           
-      for ($row = 1; $row < 5; $row++) {
-        echo "<ul>";
-        echo "<li>".$row."</li>";//echo what?
-        
-        echo "</ul>";
-        
-        echo "<ul>";
-        echo "<ul>";
-                   
-        for ($col = 1; $col < 6; $col++) {
-          echo "<li>".$col."</li>";
-          
-        }
-        echo "</ul>";
-        echo "</ul>";
-        
-      }
-  ?> 
+   <?php echo $col; ?>
     
    
   </body>
