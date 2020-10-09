@@ -1,3 +1,14 @@
+<?php
+  echo "<table border =\"1\" style='border:1px solid black'>";
+      for ($Row =1; $Row < 16; $Row++){
+        echo "<tr>\n";
+        for ($Cell = 1; $Cell < 6; $Cell++){
+          echo "<td> Row $Row Cell $Cell </td> \n";
+        }
+        echo "</tr>";
+      }
+      echo "</table>";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,17 +28,6 @@
 	</style>
 </head>
 <body>
-  <?php
-  echo "<table border =\"1\" style='border:1px solid black'>";
-      for ($Row =1; $Row < 16; $Row++){
-        echo "<tr>\n";
-        for ($Cell = 1; $Cell < 6; $Cell++){
-          echo "<td> Row $Row Cell $Cell </td> \n";
-        }
-        echo "</tr>";
-      }
-      echo "</table>";
-?>
     
 </body>
 </html>
