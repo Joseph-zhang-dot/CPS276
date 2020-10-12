@@ -1,11 +1,20 @@
 <html>
 <body>
 
-<form action="welcome.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
+<?php
+function divide($dividend, $divisor) {
+    if($divisor == 0) {
+      throw new Exception("Division by zero");
+    }
+    return $dividend / $divisor;
+  }
+  try {
+    echo divide(5, 0);
+  } catch(Exception $e) {
+    echo "Unable to divide.";
+  }
+  
+?>
 
 </body>
 </html>
