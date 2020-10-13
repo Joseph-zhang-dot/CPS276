@@ -1,5 +1,6 @@
 <?php
 /*
+
 An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
 */
     for ($row = 1; $row < 5; $row++) {

@@ -18,6 +18,7 @@ bibendum erat, sed bibendum eros cursus eu. Nulla at neque
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
 <title>&lt;My Web Page&gt;</title>
 <style>
 	* {margin: 0; padding: 0;}
