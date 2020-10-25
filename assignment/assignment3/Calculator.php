@@ -8,16 +8,17 @@ class calculator
     public $result;
 
     
-        function _construct($c, $a, $b){
-            $this->a = $a;
-            $this->b = $b;
-            $this->c = $c; 
-        }
+        // function _construct($c, $a, $b){
+        //     $this->a = $a;
+        //     $this->b = $b;
+        //     $this->c = $c; 
+        // }
         function calc($c, $a, $b)
         { 
             $this->a = $a;
-            $this->b = $b;     
-            return $this->checkopration($c);
+            $this->b = $b;
+            $this->c = $c;     
+            return $this ->checkopration($c);
         }
     function checkopration($oprator)
         {
@@ -40,10 +41,10 @@ class calculator
 
             case '/':
                 function divide($a,$b){
-                    
+                 
                     if ($b == 0){
                         throw new Exception("Division by zero<br>");
-                    } else {
+                    } else {                        
                         $result=$a /$b;
                         echo "The division of the numbers {$a} and {$b} is {$result}<br>";
                         }

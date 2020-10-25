@@ -8,13 +8,13 @@ function divide($dividend, $divisor) {
 }
 
 try {
-    echo divide(5, 0);
+    echo divide($dividend, $divisor);
   } catch(Exception $e) {
-    $code = $ex->getCode();
-    $message = $ex->getMessage();
-    $file = $ex->getFile();
-    $line = $ex->getLine();
-    echo "Exception thrown in $file on line $line: [Code $code]
-    $message";
+    // $code = $ex->getCode();
+    // $message = $ex->getMessage();
+    // $file = $ex->getFile();
+    // $line = $ex->getLine();
+    echo "Unable to divide. ";
+    // $message";
   }
 ?>

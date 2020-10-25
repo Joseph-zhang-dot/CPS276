@@ -1,0 +1,6 @@
+Mac OS; they have no effect when used on Windows machines.
+Below is a list of parameters for the mkdir() function:
+pathname - The directory path.
+mode - The mode is 0777 by default, which means the widest possible access. Note: mode is ignored on Windows.
+recursive - Allows the creation of nested directories specified in the pathname.
+context - Added in 5.0.0 see streams
