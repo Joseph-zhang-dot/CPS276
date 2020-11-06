@@ -2,6 +2,7 @@
 $servername = "localhost";
 $username = "username";
 $password = "password";
+$dbname = "myDB";
 
 try{
     $conn = new PDO("mysql: host = $servername; dbname = myDB", $username, $password);
@@ -12,6 +13,7 @@ try{
         lastname VARCHAR(30) NOT NULL,
         reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";
+    
     $conn->exec($sql);
     echo "Connected successfully";
 }catch(PDOException $e){
