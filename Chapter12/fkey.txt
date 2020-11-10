@@ -1,0 +1,17 @@
+<!-- Syntax to Create Foreign Keys -->
+
+ALTER TABLE student ADD CONSTRAINT sc 
+FOREIGN KEY (counselorid) REFERENCES counselor (counselorid) 
+ON DELETE RESTRICT ON UPDATE NO ACTION;
+
+
+ALTER TABLE student DROP FOREIGN KEY studc;
+DROP INDEX studc ON student;
+
+ALTER TABLE tsjoin ADD CONSTRAINT js FOREIGN KEY (studentid) REFERENCES student (studentid) ON DELETE RESTRICT ON UPDATE NO ACTION;
+ALTER TABLE tsjoin ADD CONSTRAINT jt FOREIGN KEY (teacherid) REFERENCES teacher (teacherid) ON DELETE RESTRICT ON UPDATE NO ACTION;
+
+ALTER TABLE tsjoin DROP FOREIGN KEY js;
+DROP INDEX js ON tsjoin;
+ALTER TABLE tsjoin DROP FOREIGN KEY jt;
+DROP INDEX jt ON tsjoin;

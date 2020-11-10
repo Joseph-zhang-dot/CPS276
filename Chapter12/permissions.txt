@@ -1,0 +1,8 @@
+<!-- File Permissions -->
+
+In assignment 7, you will be coping files into the 'files' directory.
+Go ahead and create this directory inside your homework directory.
+Log in with putty (or whatever you use).
+cd into your homework directory and execute the following command:
+
+chmod -R 777 files

@@ -1,6 +1,5 @@
 <?php
 
-
 class Validation{
 	/* USED AS A FLAG CHANGES TO TRUE IF ONE OR MORE ERRORS IS FOUND */
 	private $error = false;

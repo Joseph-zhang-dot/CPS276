@@ -1,6 +1,5 @@
 [	
 	{
-		
 		"title": "Eric Meyer on CSS", 
 		"author": "Eric Meyer", 
 		"publisher": "New Riders", 

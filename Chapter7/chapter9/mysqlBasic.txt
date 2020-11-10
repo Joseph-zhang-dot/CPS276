@@ -1,0 +1,197 @@
+
+<!-- MySQL Basics -->
+
+Background
+Came out around 1995. 
+Until then, the leaders in the field were Oracle and MS SQL.
+MySQL was free, and fast and quickly became prominent in the market place.
+MySQL is now owned by Oracle, but the original developers have forked the original code base, left the company and formed MariaDB.
+MariaDB is basically the continuation of MySQL.
+
+________________________________
+
+
+Connecting via command line
+
+If your terminal session and database are on the same machine.
+mysql -uUSERNAME -pPASSWORD -DDATABASE
+
+If your terminal session and database are on differenct machines.
+mysql -uUSERNAME -pPASSWORD -hHOSTNAME -DDATABASE
+
+-u is the mysql user
+-p is the password
+-h is the host name
+-D is the database name
+
+example
+mysql -udoug -pdougspassword -hwww.apple.com
+
+After a successful connection, your prompt will change to:
+mysql>
+
+________________________________________________________________________
+
+DDL
+Data Definition Language
+The DDL is usually specific the the database.  (Oracle has a different DDL than MySQL)
+Usually, you have no DDL statements in your code.
+
+Your user could have access to several databases. 
+To see what databases are visible to you, use the "show" command.
+show databases;
+
+You can now select your database with the "use" command.
+use dandrew1;
+
+To see what tables exist in the database, use the "show" command again.
+show tables;
+
+To see what columns are in a table, use the "show columns" command.
+show columns from matches;
+
+To add a column to a table
+ALTER TABLE tablename ADD COLUMN columnname columndefinition
+columndefinition is the data type, null type, default type, etc.
+example
+ALTER TABLE matches ADD COLUMN xyz int not null;
+
+To remove a column:
+ALTER TABLE tablename DROP COLUMN columnname
+
+To delete an entire table
+DROP TABLE tablename
+
+To delete an entire database
+DROP DATABASE databasename  (i'd be careful with this one  :)
+
+To see the syntax needed to create a table:
+SHOW CREATE TABLE tablename
+
+__________________________________________________________
+
+Backup and Restore
+
+The MySQL community edition distribution comes with the executable "mysqldump".
+mysqldump basically creates a giant sql script file that contains all the create table and insert statements needed to recreate an entire database.
+This file is not of any proprietary format, but simply DDL statements to create the database schema, and SQL insert statements to insert the data.
+In fact, you could use this script file (with some modifications) to populate an Oracle or MS SQL database with MySQL data.
+
+To execute a script in MySQL, use the "source" command.
+From the mysql command prompt:
+source complete-path-to-script-file
+
+mysqldump command options and usage here:
+https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html
+
+This backup functionality is not fast however, and the script files are very big.
+
+__________________________________________________________
+
+Data Types
+
+char vs varchar
+Both char and varchar store string data, and both have an upper length limit.
+The difference is that internally, varchar only takes up as much space as needed.
+
+int for integer data.
+4 bytes
+-2147483648 to 2147483647
+
+tinyint 
+1 byte
+
+smallint
+2 bytes
+
+decimal, also specifies space for decimal.
+DECIMAL(5,2)
+-999.99 to 999.99
+
+date
+stores date only, no time
+'YYYY-MM-DD' format
+
+DATETIME
+used for values that contain both date and time parts. 
+'YYYY-MM-DD HH:MM:SS' format
+
+BLOB
+Can store binary data.
+(like pdfs and jpegs)
+
+____________________________________________________________________ 
+
+Primary Keys
+
+All tables should have a primary key defined.
+
+The primary key should be non-informational. 
+By that i mean, it should not be anything other that something that designates a row in a table. 
+It should not be a social sec number, or an account number, or a phone number.
+Its sole purpose is to uniquely identify a row in a table.
+
+They should be of type INT.
+They should not allow NULL.
+They should be auto-increment.
+The primary key values should be unique within the table.
+
+____________________________________________________________________
+
+
+Basic SQL
+(Structured Query Language)
+
+SQL consists of four statement types.
+SELECT, INSERT, UPDATE, and DELETE
+
+S E L E C T
+
+retrieving all records and all fields from table 'classic_car'
+SELECT * FROM classic_car;
+(The astrix means 'all fields')
+
+retrieving columns 'make', and 'model' from table 'classic_car'.
+SELECT make,model FROM classic_car;
+
+retrieving columns 'make', and 'model' from table 'classic_car', but only the records for the make "buick".
+SELECT make,model FROM classic_car WHERE make = 'buick';
+(notice the single quotes around buick.  This is because the 'make' field is of type varchar.
+
+You can use the ORDER BY clause to specify the order of data.
+In this example, the data is sorted by make, and then sorted by model within each make.
+SELECT make,model FROM classic_car ORDER BY make,model;
+
+You can limit the amount of data returned with the LIMIT clause.
+
+SELECT * from classic_car LIMIT 10;
+
+I N S E R T
+
+Add the Honda Civic record to the classic_car table.
+INSERT INTO classic_car (make,model) VALUES ('Honda','Civic');
+
+There are several reasons an insert could fail.
+If you have a non-null field that does not have a default value, and you do not specifically set a value for it in your insert, it will fail.
+Unique and foreign key constriant violations. (We will get into these next week when we study indexes)
+
+D E L E T E
+
+The delete statement can delete multiple records.
+The delete statement will delete all records that match the WHERE clause.
+If no WHERE clause is given, all records from the table are deleted.
+
+DELETE FROM classic_car WHERE make='Honda';
+
+
+U P D A T E
+
+Modify column data on specific rows.
+The update statement will update all records that match the WHERE clause.
+If no WHERE clause is given, all records from the table are updated.
+
+UPDATE classic_car set model='Civic' WHERE make = 'Honda';
+
+You can update multple fields.
+
+UPDATE classic_car set model='Civic',year=2002 WHERE make = 'Honda';
